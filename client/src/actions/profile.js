@@ -1,5 +1,4 @@
 import axios from "axios";
-import { head } from "request";
 import { setAlert } from "./alert";
 
 import { GET_PROFILE, PROFILE_ERROR } from "./types";
@@ -39,7 +38,7 @@ export const createProfile = (formData, history, edit = false) => async (
       payload: res.data,
     });
 
-    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created"), "success");
+    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
 
     if (!edit) {
       history.push("/dashboard");
