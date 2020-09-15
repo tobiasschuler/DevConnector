@@ -6,11 +6,21 @@ import { logout } from "../../actions/auth";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCode,
+  faSignOutAlt,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
+      <li>
+        <Link to="/dashboard">
+          <FontAwesomeIcon icon={faUser} />{" "}
+          <span className="hide-sm">Dashboard</span>
+        </Link>
+      </li>
       <li>
         <a onClick={logout} href="#!">
           <FontAwesomeIcon icon={faSignOutAlt} />{" "}
